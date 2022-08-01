@@ -1,0 +1,48 @@
+﻿@model AppBancoDominio.Usuario
+
+@{ 
+    ViewBag.Title = "Detalhes";
+}
+
+<div>
+    <h4>Detalhes do Usuário</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdUsu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdUsu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeUsu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeUsu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Editar", new { IdUsu = Model.IdUsu}) |
+    @Html.ActionLink("Voltar a listagem dos usuários", "Index")
+</p>

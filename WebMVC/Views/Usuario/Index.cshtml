@@ -1,0 +1,52 @@
+﻿@model IEnumerable<AppBancoDominio.Usuario>
+
+
+@{ 
+    ViewBag.Title = "Listagem de Usuários";
+}
+
+<h2>Usuários</h2>
+
+<p>
+    @Html.ActionLink("Novo Usuário", "Cadastrar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdUsu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeUsu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdUsu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeUsu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { IdUsu = item.IdUsu }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { IdUsu = item.IdUsu}) |
+            @Html.ActionLink("Apagar", "Excluir", new { IdUsu = item.IdUsu})
+        </td>
+    </tr>
+}
+
+</table>
